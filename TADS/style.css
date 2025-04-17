@@ -6,7 +6,13 @@
     margin: 0;
 }
 
-
+.borda
+{
+    border-left: 90px solid rgba(156, 135, 135, 0.8);
+    border-right: 90px solid rgba(156, 135, 135, 0.8);
+    border-bottom: 50px solid rgba(156, 135, 135, 0.8);
+    border-top: 25px solid rgba(156, 135, 135, 0.8);
+}
 
 .cabecalho
 {
@@ -30,6 +36,7 @@
     margin: 5px;
     border: 1px solid #95b995;
     background: #96b995;
+    color: gray;
     font-family: "Open Sans", sans-serif;
 }
 
@@ -42,10 +49,84 @@
     margin: 5px;
 }
 
+.subtitulo
+{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    color: #5a7758;
+    padding: 2px;
+    margin: 50px;
+}
+
+.subtituloTres
+{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bolder;
+    color: rgb(66, 59, 59);
+    margin: 50px;
+    padding: 2px;
+}
+
 .paragrafo
 {
+    color: #000000;
     text-indent: 40px;
     padding: 15px;
     margin: 15px;
     font-family: "Open Sans", sans-serif;
+}
+
+.listaDois
+{
+    color: #000000;
+    text-indent: 5px;
+    padding: 2px;
+    margin: 50px;
+    font-family: "Open Sans", sans-serif;
+    list-style:outside
+}
+
+.tabela
+{
+    border-spacing: 10px;
+    display: inline-block;
+    padding: 2px;
+    margin: 10px;
+}
+
+.devWeb
+{
+    background: #96b995;
+}
+
+.tabelaDois
+{
+    border-spacing: 10px;
+    display: inline-block;
+    padding: 2px;
+    margin: 10px;
+}
+
+th
+{
+    color: #000000;
+    padding: 20px;
+    margin: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+
+td
+{
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    color: #000000;
+    padding: 5px;
+    margin: 2px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.imagem
+{
+    margin: 5px;
+    padding: 5px;
 }
