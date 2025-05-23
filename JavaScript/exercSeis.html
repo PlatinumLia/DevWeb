@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Seis</title>
+</head>
+<body>
+    <h1>Calcula valor do seguro de um automóvel</h1>
+</body>
+
+<script>
+    let valorCarro = Number(prompt("Digite o valor do carro: "));
+    let anoFabricacao = Number(prompt("Digite o ano de fabricação:"));
+    let valorSeguro;
+
+    if(anoFabricacao > 2022)
+    {
+        valorSeguro = valorCarro * 0.05;
+    } else
+        {
+            if(anoFabricacao >= 2018 && anoFabricacao <= 2022)
+            {
+                valorSeguro = valorCarro * 0.1;
+            } else
+                {
+                    if(anoFabricacao < 2018)
+                    {
+                        valorSeguro = valorCarro * 0.15;
+                    }
+                }
+        }
+
+    alert("O valor do seguro é: " + valorSeguro);
+</script>
+
+</html>
