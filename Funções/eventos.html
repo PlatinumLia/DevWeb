@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+
+<body>
+    <input placeholder="Digite o valor" onkeyup="calcularDesconto(this.value)" onchange="calcularDesconto(this.value)" type="number">
+    <p id="desc">R$ 0,00</p>
+</body>
+
+<script>
+    function calcularDesconto(valor)
+    {
+        let desconto = valor * 0.9;
+        // Busca pela tag cujo id = "desc";
+        // E define o conteúdo (innerHTML);
+        document.querySelector("#desc").innerHTML="R$" + desconto.toFixed(2);
+        // Equivalente a:
+        let p = document.querySelector("#desc");
+        p.innerHTML = "R$" + desconto.toFixed(2);
+        p.style.backgroundColor = "yellow";
+
+        return desconto;
+    }
+</script>
+
+</html>
