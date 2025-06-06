@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Quatro</title>
+    <style>
+        body 
+        {
+        padding: 10px;
+        }
+
+        input
+        {
+            padding: 5px;
+        }
+
+        #valorItem
+        {
+            max-width: 60px;
+        }
+
+        #qtdItem
+        {
+            max-width: 45px;
+        }
+
+        #valorF
+        {
+            background-color: #90ee90;
+            padding: 5px 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Orçamento</h1>
+    <div class="container">
+        <label>Item: </label>
+        <input type="text">
+
+        <label>Valor: </label> 
+        <input id="valor" type="number">
+
+        <label>Quantidade: </label> 
+        <input id="quantidade" type="number">
+
+        <button onclick="calculoValor()">=</button>
+        <span id="valorF">R$ 0,00</span>
+    </div>
+</body>
+
+<script>
+    function calculoValor()
+    {
+        let valor = document.querySelector("#valor").value;
+        let quantidade = document.querySelector("#quantidade").value;
+        let total = valor * quantidade;
+        document.querySelector("#valorF").innerHTML = "R$" + total.toFixed(2);
+    }
+</script>   
+
+</html>

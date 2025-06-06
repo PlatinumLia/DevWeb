@@ -16,8 +16,9 @@
     function calcularDesconto(valor)
     {
         let desconto = valor * 0.9;
-        // Busca pela tag cujo id = "desc";
+        
         // E define o conteúdo (innerHTML);
+        // Busca pela tag cujo id = "desc";
         document.querySelector("#desc").innerHTML="R$" + desconto.toFixed(2);
         // Equivalente a:
         let p = document.querySelector("#desc");
