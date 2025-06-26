@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Dois</title>
+    <style>
+        /* Espaçamento do form */
+        form
+        {
+            display: grid;
+            grid-template-columns: max-content min-content;
+            border: 1px solid green;
+            margin: 25px;
+            padding: 20px 20px 40px 20px;
+            width: 60%;
+        }
+
+        /*Espaçamento dos input's*/
+        input
+        {
+            width: 225px;
+            margin-left: 2px;
+        }
+
+        /* Alinha os nomes dos campos */
+        label
+        {
+            text-align: end;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Preencha o formulário</h1>
+    <form action="">
+        <label>Nome:</label> 
+        <input type="text" id="nome">
+
+        <label>CPF:</label>  
+        <input type="number" id="cpf">
+
+        <label>Email:</label> 
+        <input type="text" id="email">
+
+        <button>enviar</button>
+    </form>    
+</body>
+
+<script>
+    //adiciona o evento de submit
+    document.querySelector("form").addEventListener("submit", (event) => 
+    {
+        event.preventDefault(); //impede a página de carregar
+
+        //declaração das variáveis dos campos do form
+        let nome = document.querySelector("#nome").value;
+        let cpf = document.querySelector("cpf").value;
+        let email = document.querySelector("email").value;
+
+        /* validação dos campos*/
+        if(nome.length >= 3 && cpf.length == 11 && email.length >= 4) //caso tudo esteja válido
+        {
+            alert("Tudo válido!");
+        }else //caso haja algum erro
+        {
+            if(nome.length < 3) //erro no campo 'nome'
+            {
+                alert("Erro! O campo 'nome' precisa conter pelo menos 3 letras.");
+            }else
+            {
+                if(cpf.length != 11) //erro no campo 'cpf'
+                {
+                    alert("Erro! O campo 'CPF' precisa conter 11 números");
+                }else
+                {
+                    if(email.length < 4) //erro no campo 'email'
+                    {
+                        alert("Erro! O campo 'email' precisa conter pelo menos 4 caracteres.");
+                    }else
+                    {
+                        if(nome.length < 3 && cpf.length != 11 && email.length < 4)  //erro em todos
+                        {
+                            alert("Todos os campos estão errados");
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+</html>

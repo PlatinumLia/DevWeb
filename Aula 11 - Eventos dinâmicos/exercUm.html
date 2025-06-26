@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+    <style>
+        /* Campos dos numeros */
+        p, input
+        {
+            border: 1px solid #cccccc;
+            width: 50px;
+            display: inline-block;
+            padding: 2px;
+        }
+
+        /* Espaçamento entre o botão e a span */
+        span
+        {
+            margin-top: 10px;
+        }    
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p class="num1" type="number"></p>+
+        <p class="num2" type="number"></p>=
+        <input type="number" placeholder="?">
+        <button>verificar</button>
+    </div>
+    <span> <!--- Local onde a msg aparece---> </span>
+</body>
+
+<script>
+    let soma; //variável global
+    function randomNum() //função para gerar os números aleatórios
+    {
+        /* Gera números randons de 0 a 200*/
+        let num1 = parseInt(Math.random() * 200); //gera um numero aleatório para o num1
+        let num2 = parseInt(Math.random() * 200); //gera um número aleatório para o num2
+
+        //insere os valores no HTML
+        document.querySelector(".num1").innerText = num1;
+        document.querySelector(".num2").innerText = num2;
+        document.querySelector("input").value = ""; //limpa a input
+
+        //calcula a soma
+        soma = num1 + num2;
+        console.log(soma); //mostra no console o resultado
+    }
+
+    //quando a página carrega
+    window.onload = () =>
+    {
+        randomNum(); //chama a função
+
+        //adiciona um evento (no caso, o evento ao "click") no button
+        document.querySelector("button").addEventListener("click", () => 
+        {
+            let resp = Number(document.querySelector("input"). value);
+            
+            /* Verifica a resposta */
+            if(resp == soma) //acerto
+            {
+                document.querySelector("span").innerText = "Parabéns";
+            }else
+            {
+                document.querySelector("span").innerText = "Errou!";
+            }    
+        });
+    } 
+</script>
+
+</html>
