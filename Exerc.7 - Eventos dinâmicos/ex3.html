@@ -4,11 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Exercício 3</title>
 </head>
 
 <body>
+  <input type="text" id="add">
+  <button>+</button>
   
+  <p>Lista de tarefas:</p>
+  <ol id="lista">
+    <!-- As tarefas aparecem aqui -->
+  </ol>
 </body>
+
+<script>
+  /* evento ao clicar no button */
+  document.querySelector("button").addEventListener("click", () =>
+  {
+    let tarefaN = document.querySelector("#add").value; //declara o texto
+    let lista = document.querySelector("#lista"); //declara a lista
+    
+    //só cria o item se tiver algo escrito
+    if(tarefaN != "")
+    {
+      lista.innerHTML += "<li>" + tarefaN + "</li>" //insere item na lista
+      
+      document.querySelector("input").value = ""; //limpa a input
+    }
+  });
+</script>
 
 </html>
