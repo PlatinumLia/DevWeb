@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercício 4</title>
+  <style>
+    *{
+      padding 0;
+      margin: 0;
+    }
+    
+    body
+    {
+      background-image: url('fundo.png'); /* adiciona imagem ao fundo do site*/
+      background-size: cover; /* a img cobre toda a área do body*/
+      background-position: center; /* centraliza a img */
+      background-repeat: no-repeat; /* para a img não se repetir automaticamente*/
+      height: 100%; /* ocupa toda a área de visualização */
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .container
+    {
+      border: 1px solid #6ab7b6;
+      background-color: rgba(93, 142, 163, 0.3); /* cor com transparência */
+      width: 45%;
+      padding: 30px;
+      font-size: larger;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 60px;
+    }
+    
+    form /* disposição do formulário*/
+    {
+      display: grid;
+      grid-template-columns: min-content max-content;
+    }
+    
+    /* estilização dos textos */
+    p
+    {
+      color: white;
+      font-weight: none;
+      padding-left: 215px;
+      margin-bottom: 20px;
+    }
+    
+    label /* identificação de cada campo */
+    {
+      color: #6ab7b6;
+      text-align: end;
+      margin-right: 8px;
+    }
+    
+    .outros label /* alinha os textos da última coluna*/
+    {
+      margin-left: 8px;
+    }
+    
+    input, select
+    {
+      border: 2px solid #0b5178;
+      box-shadow: 4px 4px 6px rgba(11, 81, 120, 0.7); /* sombra com opacidade*/
+      margin-bottom: 8px;
+    }
+    
+    /* tamanhos das inputs no último campo*/
+    #idade
+    {
+      width: 75px;
+    }
+    
+    #ddd
+    {
+      width: 50px;
+    }
+    
+    /* tamanho do botão */
+    button
+    {
+      width: 75px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <p>Cadastro usuário</p>
+    <form>
+      <label>Nome</label>
+      <input type="text" name="nome" placeholder="Nome" required/>
+      
+      <label>Email</label>
+      <input type="email" name="email" placeholder="user@example.org" required>
+      
+      <label>Nascimento</label>
+      <input type="date" name="data" placeholder="dd/mm/aaaa" required>
+      
+      <label>País</label>
+      <select name="pais">
+        <option value="none">Selecione</option>
+        <option value="BR">Brasil</option>
+        <option value="CH">Chile</option>
+        <option value="JP">Japão</option>
+      </select>
+      
+      <label id="idade">Idade</label> <!-- Para os campos ficarem na segunda coluna -->
+      <div class="outros">
+        <input type="number" name="idade">
+        
+        <label id="ddd">DDD</label>
+        <input type="number" name="ddd">
+        
+        <label>Telefone</label>
+        <input type="number" name="tel">
+      </div>
+      
+      <div><!-- div para o botão ficar corretamente na segunda coluna do grid --></div>
+      
+      <button>Adicionar</button>
+    </form>
+  </div>
+</body>
+
+</html>
