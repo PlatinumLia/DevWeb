@@ -56,8 +56,8 @@
 
         //declaração das variáveis dos campos do form
         let nome = document.querySelector("#nome").value;
-        let cpf = document.querySelector("cpf").value;
-        let email = document.querySelector("email").value;
+        let cpf = document.querySelector("#cpf").value;
+        let email = document.querySelector("#email").value;
 
         /* validação dos campos*/
         if(nome.length >= 3 && cpf.length == 11 && email.length >= 4) //caso tudo esteja válido
@@ -68,24 +68,14 @@
             if(nome.length < 3) //erro no campo 'nome'
             {
                 alert("Erro! O campo 'nome' precisa conter pelo menos 3 letras.");
-            }else
+            }
+            if(cpf.length != 11) //erro no campo 'cpf'
             {
-                if(cpf.length != 11) //erro no campo 'cpf'
-                {
-                    alert("Erro! O campo 'CPF' precisa conter 11 números");
-                }else
-                {
-                    if(email.length < 4) //erro no campo 'email'
-                    {
-                        alert("Erro! O campo 'email' precisa conter pelo menos 4 caracteres.");
-                    }else
-                    {
-                        if(nome.length < 3 && cpf.length != 11 && email.length < 4)  //erro em todos
-                        {
-                            alert("Todos os campos estão errados");
-                        }
-                    }
-                }
+                alert("Erro! O campo 'CPF' precisa conter 11 números");
+            }
+            if(email.length < 4) //erro no campo 'email'
+            {
+                alert("Erro! O campo 'email' precisa conter pelo menos 4 caracteres.");
             }
         }
     });
