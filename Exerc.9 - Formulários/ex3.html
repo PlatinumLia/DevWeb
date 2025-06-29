@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercício 3</title>
+  <style>
+    form /*disposição do formulário*/
+    {
+      display: grid;
+      grid-template-columns: max-content max-content;
+    }
+    
+    input, select, textarea, button /*espaçamento dos campos + o botão*/
+    {
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+    
+    input:required:invalid /*muda a cor para avisar que o campo está inválido*/
+    {
+      color:red;
+    }
+    
+    label
+    {
+      text-align: right;
+    }
+    
+    button
+    {
+      width: 50px;
+      padding: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="">
+    <label>Nome</label>
+    <input type="text" name="nome" minlength="3" placeholder="nome" required />
+    
+    <label>Email</label>
+    <input type="email" name="email" placeholder="user@example.org" required />
+    
+    <label>Password</label>
+    <input type="password" name="senha" minlength="6" maxlength="10" placeholder="6 caracteres" required/>
+    
+    <label>Possui conhecimento?</label>
+    <div>
+      <input type="checkbox" name="conhecimento" />Javascript
+      <input type="checkbox" name="conhecimento" />HTML
+      <input type="checkbox" name="conhecimento" />CSS
+    </div>
+    
+    <label>Curso</label>
+    <select name="Curso">
+      <option value="none">--Selecione--</option>
+      <option value="ADS">Análise e Desenvolvimento de Sistemas</option>
+      <option value="F">Física</option>
+      <option value="M">Matemática</option>
+    </select>
+    
+    <label>Turno</label>
+    <div>
+      <input type="radio" name="turno" />Tarde
+      <input type="radio" name="turno" />Noite
+    </div>
+    
+    <label>Motivo da matrícula</label>
+    <textarea cols="30" rows="8" name="motivo">
+    </textarea>
+    <p><!--Para não quebrar o grid--></p>
+    <button>enviar</button>
+  </form>
+</body>
+
+</html>
