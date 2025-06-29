@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercício 4</title>
+  <style>
+    /* espaçamentos */
+    body
+    {
+      padding: 10px;
+    }
+    
+    div
+    {
+      margin-bottom: 20px;
+    }
+    
+    input
+    {
+      padding:  5px;
+    }
+    
+    /* tamanho das inputs */
+    .valor
+    {
+      max-width: 60px;
+    }
+    
+    .qtd
+    {
+      max-width: 45px;
+    }
+    
+    /* estilização dos campos de resultado final */
+    .total
+    {
+      background-color: #90ee90;
+      padding: 5px 30px;
+    }
+    
+    .valorT
+    {
+      background-color: #87cefa;
+      padding: 20px 140px 20px 20px;
+      font-size: 25px;
+      width: 225px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Orçamento</h1>
+  <!-- Campos Item 1-->
+  <div>
+    <label>item: </label>
+    <input type="text" id="item1"/>
+    <label>valor: </label>
+    <input type="number" class="valor" id="valor1">
+    <label>quantidade: </label>
+    <input type="number" class="qtd" id="qtd1">
+    <span class="total" id="total1">R$0,00</span>
+  </div>
+  
+  <!-- Campos Item 2-->
+  <div>
+    <label>item: </label>
+    <input type="text" id="item2"/>
+    <label>valor: </label>
+    <input type="number" class="valor" id="valor2">
+    <label>quantidade: </label>
+    <input type="number" class="qtd" id="qtd2">
+    <span class="total" id="total2">R$0,00</span>
+  </div>
+  
+  <!-- Campos Item 3-->
+  <div>
+    <label>item: </label>
+    <input type="text" id="item3"/>
+    <label>valor: </label>
+    <input type="number" class="valor" id="valor3">
+    <label>quantidade: </label>
+    <input type="number" class="qtd" id="qtd3">
+    <span class="total" id="total3">R$0,00</span>
+  </div>
+  
+  <!-- Campo Resultado Total-->
+  <div class="valorT">
+    <span id="valorT">Valor total: R$0,00</span>
+  </div>
+</body>
+
+<script>
+  //seleciona todos os inputs
+  document.querySelectorAll("input").forEach((input) =>
+  {
+    //adicionando o evento(input) às input's
+    input.addEventListener("input", () => 
+    {
+      /* calculando o total do item 1 e os demais itens */
+      
+      //declarações item 1
+      let valor1 = parseFloat(document.querySelector("#valor1").value || 0); /* "|| 0" para não aparecer NaN*/
+      let qtd1 = parseFloat(document.querySelector("#qtd1").value || 0);
+      
+      //cálculo total item 1
+      let total1 = valor1 * qtd1;
+      document.querySelector("#total1").innerHTML = "R$" + total1.toFixed(2);
+      
+      /* item 2*/
+      let valor2 = parseFloat(document.querySelector("#valor2").value || 0);
+      let qtd2 = parseFloat(document.querySelector("#qtd2").value || 0);
+      //cálculo total item 2
+      let total2 = valor2 * qtd2;
+      document.querySelector("#total2").innerHTML = "R$" + total2.toFixed(2);
+      
+      /* item 3*/
+      let valor3 = parseFloat(document.querySelector("#valor3").value || 0);
+      let qtd3 = parseFloat(document.querySelector("#qtd3").value || 0);
+      //cálculo total item 3
+      let total3 = valor3 * qtd3;
+      document.querySelector("#total3").innerHTML = "R$" + total3.toFixed(2);
+      
+      /* cálculo total final*/
+      let valorT = total1 + total2 + total3;
+      document.querySelector("#valorT").innerHTML = "Valor total: R$" + valorT.toFixed(2);
+    });
+  });
+</script>
+
+</html>
