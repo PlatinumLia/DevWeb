@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>title>Exercício 1</title>
+  <style> 
+    form
+    {
+      display: grid;
+      grid-template-columns: max-content min-content;
+      gap: 10px;
+      border: 1px solid green;
+      background-color: lightgreen;
+      /*Alinhamentos*/
+      padding: 20px;
+      width: 40%;
+      align-items: center;
+      
+    }
+    
+    input, select 
+    {
+      width: fit-content;
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+    
+    label
+    {
+      text-align: end;
+      color: navy;
+    }
+    
+    button 
+    {
+      width: 30%;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <form class="grid">
+    <label>Data de nascimento: </label>
+    <input type="date" name="data" placeholder="dd/mm/aaaa">
+    
+    <label>Escolaridade: </label>
+    <select>
+      <option value="">Ensino fundamental</option>
+      <option value="">Ensino Médio</option>
+      <option value="">Ensino Superior</option>
+    </select>
+    
+    <label>Situação da Escolaridade: </label>
+    <div> <!-- Para não quebrar o grid-->
+      <input type="radio" name="situacao">Completo
+      <input type="radio" name="situacao">Incompleto
+    </div>
+    
+    <label>Nacionalidade: </label>
+    <select>
+      <option>Brasil</option>
+    </select>
+    
+    <label>UF onde nasceu: </label>
+    <select>
+      <option>Paraná</option>
+      <option>Minas Gerais</option>
+    </select>
+    
+    <button>enviar</button>
+  </form>
+</body>
+
+</html>
