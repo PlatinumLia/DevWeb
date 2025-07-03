@@ -7,7 +7,7 @@
   <title>Exercício 4</title>
   <style>
     *{
-      padding 0;
+      padding: 0;
       margin: 0;
     }
     
@@ -25,7 +25,7 @@
     {
       border: 1px solid #6ab7b6;
       background-color: rgba(93, 142, 163, 0.3); /* cor com transparência */
-      width: 45%;
+      width: 500px;
       padding: 30px;
       font-size: larger;
       margin-left: auto;
@@ -36,7 +36,7 @@
     form /* disposição do formulário*/
     {
       display: grid;
-      grid-template-columns: min-content max-content;
+      grid-template-columns: max-content max-content;
     }
     
     /* estilização dos textos */
@@ -78,6 +78,11 @@
       width: 50px;
     }
     
+    #tel
+    {
+      width: 50px;
+    }
+
     /* tamanho do botão */
     button
     {
@@ -107,15 +112,15 @@
         <option value="JP">Japão</option>
       </select>
       
-      <label id="idade">Idade</label> <!-- Para os campos ficarem na segunda coluna -->
+      <label >Idade</label> <!-- Para os campos ficarem na segunda coluna -->
       <div class="outros">
-        <input type="number" name="idade">
+        <input id="idade" type="number" name="idade">
         
-        <label id="ddd">DDD</label>
-        <input type="number" name="ddd">
+        <label >DDD</label>
+        <input id="ddd" type="number" name="ddd">
         
         <label>Telefone</label>
-        <input type="number" name="tel">
+        <input id="tel" type="number" name="tel">
       </div>
       
       <div><!-- div para o botão ficar corretamente na segunda coluna do grid --></div>
