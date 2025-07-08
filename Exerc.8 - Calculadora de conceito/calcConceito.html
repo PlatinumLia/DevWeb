@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de Conceito</title>
+  <style>
+    *{ /* limpa o espaçamento padrão do navegador */
+      padding: 0;
+      margin: 0;
+    }
+    
+    .container
+    {
+      border: 5px double gray;
+      padding: 20px;
+      max-width: 250px;
+      margin: 25px;
+    }
+    
+    /* estilização da tabela*/
+    table /* tag table sem borda */
+    {
+      border-collapse: collapse;
+    }
+    
+    td /* espaçamento entre as colunas */
+    {
+      padding-right: 15px;
+    }
+    
+    td:nth-child(2) /* 0 alinhado com os outros valores */
+    {
+      text-align: end;
+    }
+    
+    td:last-child /* alinhando última célula com o título */
+    {
+      width: 130px;
+    }
+    
+    /* estilização da calculadora */
+    h2
+    {
+      color: navy;
+      margin: 20px 0;
+    }
+    
+    .p-nota
+    {
+      color: gray;
+    }
+    
+    input
+    {
+      width: 60px;
+      margin-right: 50px;
+    }
+    
+    .resultados
+    {
+      margin-top: 15px;
+    }
+    
+    #conceito
+    {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <table> <!-- Tabela dos valores -->
+      <p>Intervalo de valores e conceito</p>
+      <tr>
+        <td>A</td>
+        <td>9.0</td> <td>-</td> <td>10</td>
+      </tr>
+      
+      <tr>
+        <td>B</td>
+        <td>7.5</td> <td>-</td> <td>8.9</td>
+      </tr>
+      
+      <tr>
+        <td>C</td>
+        <td>6.0</td> <td>-</td> <td>7.4</td>
+      </tr>
+      
+      <tr>
+        <td>D</td>
+        <td>0</td> <td>-</td> <td>5.9</td>
+      </tr>
+    </table>
+    
+    <!-- Calculadora -->
+    <h2>Calculadora de conceito</h2>
+      <div class="notas">
+        <div> <!-- N1 -->
+          <p class="p-nota">Nota 1</p>
+          <input id="notaU" type="number"/>
+        </div>
+        
+        <div> <!-- N2 -->
+          <p class="p-nota">Nota 2</p>
+          <input type="number" id="notaD"/>
+        </div>
+        
+        <div> <!-- N3 -->
+          <p class="p-nota">Nota 3</p>
+          <input type="number" id="notaT"/>
+        </div>
+        
+        <!-- Mostrar os resultados finais -->
+        <div class="resultados">
+          <p>Conceito</p>
+          <p>Média</p>
+        </div>
+        
+        <div class="resultados">
+          <p id="conceito"></p>
+          <p id="media"></p>
+        </div>
+      </div>
+  </div>
+</body>
+
+<script>
+
+</script>
+</html>
