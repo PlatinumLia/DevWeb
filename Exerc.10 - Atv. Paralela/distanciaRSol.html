@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atividade Paralela</title>
+  <style>
+    h2
+    {
+      margin-left: 50px;
+    }
+    
+    .container
+    {
+      display: grid;
+      grid-template-columns: max-content max-content max-content;
+      width: fit-content;
+    }
+    
+    .itemCol
+    {
+      padding: 10px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    
+    img
+    {
+      width: 65px;
+    }
+    
+    .item
+    {
+      border: 1px solid #000000;
+      padding: 20px;
+      align-items: center;
+    }
+    
+    #nomeP
+    {
+      padding: 50px;
+    }
+    
+    #terra
+    {
+      color: blue;
+      padding: 50px;
+    }
+    
+    #outrosP
+    {
+      color: red;
+      padding: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Distâncias em relação ao Sol</h2>
+  <div class="container"> <!-- grid -->
+    <div class="itemCol">Planeta</div>
+    <div class="itemCol">Nome</div>
+    <div class="itemCol">Distância</div>
+    <div class="item"><img src="earth.png"></div>
+    <div class="item" id="nomeP">Terra</div>
+    <div class="item" id="terra">1 AU</div>
+    
+   <div class="item"><img src="venus.png"></div>
+    <div class="item" id="nomeP">Vênus</div>
+    <div class="item" id="outrosP">0.72 AU</div>
+    
+    <div class="item"><img src="mars.png"></div>
+    <div class="item" id="nomeP">Marte</div>
+    <div class="item" id="outrosP">1.52 AU</div>
+    
+    <div class="item"><img src="jupiter.png"></div>
+    <div class="item" id="nomeP">Júpiter</div>
+    <div class="item" id="outrosP">5.20 AU</div>
+    
+    <div class="item"><img src="saturn.png"></div>
+    <div class="item" id="nomeP">Saturno</div>
+    <div class="item" id="outrosP">9.58 AU</div>
+  </div>
+</body>
+
+</html>
