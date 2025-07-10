@@ -74,22 +74,22 @@
   <div class="container">
     <table> <!-- Tabela dos valores -->
       <p>Intervalo de valores e conceito</p>
-      <tr>
+      <tr id="conceito1">
         <td>A</td>
         <td>9.0</td> <td>-</td> <td>10</td>
       </tr>
       
-      <tr>
+      <tr id="conceito2">
         <td>B</td>
         <td>7.5</td> <td>-</td> <td>8.9</td>
       </tr>
       
-      <tr>
+      <tr id="conceito3">
         <td>C</td>
         <td>6.0</td> <td>-</td> <td>7.4</td>
       </tr>
       
-      <tr>
+      <tr id="conceito4">
         <td>D</td>
         <td>0</td> <td>-</td> <td>5.9</td>
       </tr>
@@ -100,18 +100,20 @@
       <div class="notas">
         <div> <!-- N1 -->
           <p class="p-nota">Nota 1</p>
-          <input id="notaU" type="number"/>
+          <input id="nota1" type="number">
         </div>
         
         <div> <!-- N2 -->
           <p class="p-nota">Nota 2</p>
-          <input type="number" id="notaD"/>
+          <input type="number" id="nota2">
         </div>
         
         <div> <!-- N3 -->
           <p class="p-nota">Nota 3</p>
-          <input type="number" id="notaT"/>
+          <input type="number" id="nota3">
         </div>
+        
+      <div> <!-- Div para não quebrar o grid --> </div>
         
         <!-- Mostrar os resultados finais -->
         <div class="resultados">
@@ -128,6 +130,54 @@
 </body>
 
 <script>
-
+  /* selecionando todas as inputs*/
+  document.querySelectorAll("input").forEach((input) => 
+  {
+    /* adicionando um evento de input nas input's */
+    input.addEventListener("input", () => 
+    {
+      /* seleção dos valores colocados nas input's */
+      let nota1 = parseFloat(document.querySelector("#nota1").value) || 0; /* " || 0" para não aparecer NaN*/
+      let nota2 = parseFloat(document.querySelector("#nota2").value) || 0;
+      let nota3 = parseFloat(document.querySelector("#nota3").value) || 0;
+      let media = ((nota1 + nota2 + nota3) / 3); // cálculo da média
+      if(media > 10)
+      {
+        media = 10; // limita o valor máximo possível
+      }
+      
+      document.querySelector("#media").innerHTML = media.toFixed(2); // mostra a média
+      
+      let conceito = ""; // definindo o conceito
+      for(let i = 1; i <= 4; i++) // limpa a cor na tabela qnd altera os valores
+      {
+        document.querySelector("#conceito" + i).style.backgroundColor = "";
+      }
+      
+      if(media >= 9) //conceito A
+      {
+        conceito = "A";
+        document.querySelector("#conceito1").style.backgroundColor = "yellow"; // cor respectiva da linha do conceito
+        document.querySelector("#conceito").style.color = "#004b23"; // cor da letra
+      }else if(media >= 7.5) //conceito B
+        {
+          conceito = "B";
+          document.querySelector("#conceito2").style.backgroundColor = 'yellow';
+          document.querySelector("#conceito").style.color = "#01497c";
+        }else if(media >= 6) // conceito C
+          {
+            conceito = "C";
+            document.querySelector("#conceito3").style.backgroundColor = "yellow";
+            document.querySelector("#conceito").style.color = "#621708"
+          }else
+            {
+              conceito = "D";
+              document.querySelector("#conceito4").style.backgroundColor = "yellow";
+              document.querySelector("#conceito").style.color = "#941b0c";
+            }
+            
+        document.querySelector("#conceito").innerHTML = conceito; // mostra o conceito
+    }); // fecha o addEventListener
+  });// fecha o forEach
 </script>
 </html>
